@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Utils/colour.dart';
+import '../Utils/global_function.dart';
 import 'contect_form.dart';
 
 class PortfolioPage extends StatelessWidget {
@@ -23,7 +25,7 @@ class PortfolioPage extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 60,
-                    backgroundColor: Color(0xFF64FFDA),
+                    backgroundColor: primaryColour,
                     child: CircleAvatar(
                       radius: 56,
                       backgroundImage: AssetImage('assets/images/meet.jpg'),
@@ -44,7 +46,7 @@ class PortfolioPage extends StatelessWidget {
                     'Flutter Developer | 2.5+ Years Experience',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Color(0xFF64FFDA),
+                      color: primaryColour,
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -67,7 +69,7 @@ class PortfolioPage extends StatelessWidget {
                       onTap: () => _launchURL('https://pub.dev/packages/whatsapp_field'),
                       child: const Text(
                         '→ whatsapp_field on pub.dev',
-                        style: TextStyle(fontSize: 16, color: Color(0xFF64FFDA)),
+                        style: TextStyle(fontSize: 16, color: primaryColour),
                       ),
                     ),
                   ),
@@ -101,28 +103,28 @@ class PortfolioPage extends StatelessWidget {
                   const SizedBox(height: 32),
                   const Divider(thickness: 1, color: Colors.white30),
                   const SizedBox(height: 16),
-                  const Text('📍 Gujarat, India', style: TextStyle(color: Colors.white)),
-                  const Text('📞 +91 12345 67890', style: TextStyle(color: Colors.white)),
-                  const Text('✉️ meet.mevada@example.com', style: TextStyle(color: Colors.white)),
+                  InkWell(onTap: launchMap, child: const Text('📍 Ahmedabad, Gujarat, India', style: TextStyle(color: Colors.white))),
+                  InkWell(onTap: launchPhoneDialer, child: const Text('📞 +91 9924859611', style: TextStyle(color: Colors.white))),
+                  InkWell(onTap: launchEmail, child: const Text('✉️ mevadameet8301@gmail.com', style: TextStyle(color: Colors.white))),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: () => _launchURL('https://linkedin.com/in/yourprofile'),
-                        icon: const FaIcon(FontAwesomeIcons.linkedin, color: Color(0xFF64FFDA)),
+                        onPressed: () => _launchURL('https://in.linkedin.com/in/meet-mevada-041532246'),
+                        icon: const FaIcon(FontAwesomeIcons.linkedin, color: primaryColour),
                       ),
                       IconButton(
-                        onPressed: () => _launchURL('https://github.com/yourprofile'),
-                        icon: const FaIcon(FontAwesomeIcons.github, color: Color(0xFF64FFDA)),
+                        onPressed: () => _launchURL('https://github.com/MeetMevadaStar'),
+                        icon: const FaIcon(FontAwesomeIcons.github, color: primaryColour),
                       ),
                       IconButton(
-                        onPressed: () => _launchURL('https://facebook.com/yourprofile'),
-                        icon: const FaIcon(FontAwesomeIcons.facebook, color: Color(0xFF64FFDA)),
+                        onPressed: () => _launchURL('https://www.facebook.com/meet.mevada.319'),
+                        icon: const FaIcon(FontAwesomeIcons.facebook, color: primaryColour),
                       ),
                       IconButton(
-                        onPressed: () => _launchURL('https://instagram.com/yourprofile'),
-                        icon: const FaIcon(FontAwesomeIcons.instagram, color: Color(0xFF64FFDA)),
+                        onPressed: () => _launchURL('https://www.instagram.com/meet_mevada_/'),
+                        icon: const FaIcon(FontAwesomeIcons.instagram, color: primaryColour),
                       ),
                     ],
                   ),
@@ -165,7 +167,7 @@ class PortfolioPage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF64FFDA),
+                    color: primaryColour,
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -196,7 +198,7 @@ class ProjectButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: TextButton.icon(
         style: TextButton.styleFrom(
-          foregroundColor: const Color(0xFF64FFDA),
+          foregroundColor: primaryColour,
           backgroundColor: Colors.white.withOpacity(0.1),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

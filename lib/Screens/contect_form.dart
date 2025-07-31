@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Utils/colour.dart';
+
 class ContactForm extends StatelessWidget {
   const ContactForm({super.key});
 
@@ -17,7 +19,7 @@ class ContactForm extends StatelessWidget {
           width: double.infinity,
           child: ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF64FFDA),
+              backgroundColor: primaryColour,
               foregroundColor: Colors.black,
               elevation: 3,
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -43,7 +45,7 @@ class ContactForm extends StatelessWidget {
     return TextField(
       maxLines: maxLines,
       style: const TextStyle(color: Colors.white),
-      cursorColor: const Color(0xFF64FFDA),
+      cursorColor: primaryColour,
       decoration: InputDecoration(
         labelText: label,
         labelStyle: const TextStyle(color: Colors.white70),
@@ -55,7 +57,7 @@ class ContactForm extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Color(0xFF64FFDA), width: 1.5),
+          borderSide: const BorderSide(color: primaryColour, width: 1.5),
           borderRadius: BorderRadius.circular(12),
         ),
         filled: true,
