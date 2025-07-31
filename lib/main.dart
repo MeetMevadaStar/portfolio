@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'Screens/portfolio.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
