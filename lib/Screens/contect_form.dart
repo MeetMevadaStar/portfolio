@@ -32,11 +32,15 @@ class _ContactFormState extends State<ContactForm> {
     setState(() => _isLoading = true);
 
     try {
-      await FirebaseFirestore.instance.collection('contact_messages').add({
+      final timestamp = DateTime.now().toIso8601String(); // Example: '2025-08-01T13:52:00.123Z'
+
+      final docRef = FirebaseFirestore.instance.collection('contact_messages').doc(timestamp); // using timestamp as the doc ID
+
+      await docRef.set({
         'name': name,
         'email': email,
         'message': message,
-        'timestamp': FieldValue.serverTimestamp(),
+        'timestamp': FieldValue.serverTimestamp(), // actual server time
       });
 
       showThemedSnackBar(context, 'Message sent successfully');
