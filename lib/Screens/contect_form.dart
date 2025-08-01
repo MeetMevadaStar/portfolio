@@ -24,7 +24,7 @@ class _ContactFormState extends State<ContactForm> {
     final message = _messageController.text.trim();
 
     if (name.isEmpty || message.isEmpty) {
-      showThemedSnackBar(context, 'Name and Message cannot be empty');
+      showThemedSnackBar(context, 'Name and Message cannot be empty', isError: true);
       return;
     }
 
@@ -44,7 +44,7 @@ class _ContactFormState extends State<ContactForm> {
       _emailController.clear();
       _messageController.clear();
     } catch (e) {
-      showThemedSnackBar(context, 'Failed to send: $e');
+      showThemedSnackBar(context, 'Failed to send: $e', isError: true);
     } finally {
       setState(() => _isLoading = false);
     }
