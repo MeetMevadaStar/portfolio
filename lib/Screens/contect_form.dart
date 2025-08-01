@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:porfolio/Utils/global_function.dart';
 import '../Utils/colour.dart';
+import '../Utils/send_mail.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
@@ -39,6 +40,7 @@ class _ContactFormState extends State<ContactForm> {
       });
 
       showThemedSnackBar(context, 'Message sent successfully');
+      await sendEmailUsingEmailJS(name: name, email: email, message: message);
 
       _nameController.clear();
       _emailController.clear();
