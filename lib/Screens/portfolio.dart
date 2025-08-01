@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Utils/colour.dart';
+import '../Utils/constant.dart';
 import '../Utils/global_function.dart';
 import 'contect_form.dart';
 
@@ -104,8 +105,8 @@ class PortfolioPage extends StatelessWidget {
                   const Divider(thickness: 1, color: Colors.white30),
                   const SizedBox(height: 16),
                   InkWell(onTap: launchMap, child: const Text('📍 Ahmedabad, Gujarat, India', style: TextStyle(color: Colors.white))),
-                  InkWell(onTap: launchPhoneDialer, child: const Text('📞 +91 9924859611', style: TextStyle(color: Colors.white))),
-                  InkWell(onTap: launchEmail, child: const Text('✉️ mevadameet8301@gmail.com', style: TextStyle(color: Colors.white))),
+                  InkWell(onTap: launchPhoneDialer, child: Text('📞 ${mobileNumber}', style: TextStyle(color: Colors.white))),
+                  InkWell(onTap: launchEmail, child: Text('✉️ ${emailAddress}', style: TextStyle(color: Colors.white))),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

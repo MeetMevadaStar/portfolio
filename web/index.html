@@ -32,6 +32,26 @@
   <title>porfolio</title>
   <link rel="manifest" href="manifest.json">
 
+  <!-- ✅ Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+
+  <!-- ✅ Firebase Configuration -->
+  <script>
+    const firebaseConfig = {
+     apiKey: "AIzaSyApTzlEHB2XtgbJJXXQL4lugb220OfEiaE",
+     authDomain: "portfolio-82c56.firebaseapp.com",
+     projectId: "portfolio-82c56",
+     storageBucket: "portfolio-82c56.firebasestorage.app",
+     messagingSenderId: "396965021347",
+     appId: "1:396965021347:web:96df045418b9917c70e116",
+     measurementId: "G-WQR769M4YT"
+   };
+       firebase.initializeApp(firebaseConfig);
+  </script>
+
   <script>
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;

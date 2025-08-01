@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'colour.dart';
+
 Future<void> launchMap() async {
   final Uri googleMapUrl = Uri.parse(
     'https://www.google.com/maps/search/?api=1&query=23.095826377558456,72.66432418841963',
@@ -44,4 +46,37 @@ Future<void> launchEmail() async {
   if (!launched) {
     debugPrint('Could not launch email');
   }
+}
+
+void showThemedSnackBar(BuildContext context, String message, {bool isError = false}) {
+  final backgroundColor = Colors.white.withOpacity(0.05);
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: backgroundColor,
+      elevation: 8,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: isError ? Colors.redAccent : primaryColour.withOpacity(0.6), width: 1.2),
+      ),
+      duration: const Duration(seconds: 3),
+      content: Row(
+        children: [
+          Icon(
+            isError ? Icons.error_outline : Icons.check_circle_outline,
+            color: isError ? Colors.redAccent : primaryColour,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              message,
+              style: const TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }
