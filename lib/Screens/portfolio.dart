@@ -78,11 +78,12 @@ class PortfolioPage extends StatelessWidget {
                   _glassCard(
                     title: '🚀 Projects',
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        ProjectButton(title: 'Flutter Project', url: 'https://your_flutter_project.com'),
-                        ProjectButton(title: 'React Native Project', url: 'https://your_react_native_project.com'),
-                        ProjectButton(title: 'Node Project', url: 'https://your_node_project.com'),
-                        ProjectButton(title: 'React JS Project', url: 'https://your_react_project.com'),
+                        ProjectButton(title: 'Flutter Project', url: 'https://github.com/MeetMevadaStar'),
+                        ProjectButton(title: 'React Native Project', url: 'https://github.com/MeetMevadaStar'),
+                        ProjectButton(title: 'Node Project', url: 'https://github.com/MeetMevadaStar'),
+                        ProjectButton(title: 'React JS Project', url: 'https://github.com/MeetMevadaStar'),
                       ],
                     ),
                   ),
